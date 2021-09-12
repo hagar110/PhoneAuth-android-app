@@ -1,0 +1,76 @@
+{
+  "project_info": {
+    "project_number": "850360474311",
+    "project_id": "phoneauth-fcfe3",
+    "storage_bucket": "phoneauth-fcfe3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:850360474311:android:2d4387df2f230be256fce2",
+        "android_client_info": {
+          "package_name": "com.example.csg_task1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "850360474311-qaqgggo0i0umklhlpd82rt32d2gmb656.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCpE3-ZdqvPmyxKMTsqn7CrM0ccN40Qo2s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "850360474311-qaqgggo0i0umklhlpd82rt32d2gmb656.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:850360474311:android:3e920e9b203894a056fce2",
+        "android_client_info": {
+          "package_name": "com.example.phone_authcsg"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "850360474311-htd3tu7jut69auqfj4fdoms9jdmop51l.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.phone_authcsg",
+            "certificate_hash": "00cefd32b357c6eff3fa4b1d6998031503ab9850"
+          }
+        },
+        {
+          "client_id": "850360474311-qaqgggo0i0umklhlpd82rt32d2gmb656.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCpE3-ZdqvPmyxKMTsqn7CrM0ccN40Qo2s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "850360474311-qaqgggo0i0umklhlpd82rt32d2gmb656.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
