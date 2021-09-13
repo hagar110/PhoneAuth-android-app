@@ -23,8 +23,8 @@ class _PhoneVerificationState extends State<PhoneVerification> {
       final SnakBar = SnackBar(content: Text('login successful'));
       ScaffoldMessenger.of(context).showSnackBar(SnakBar);
     } on FirebaseAuthException catch (e) {
-      final SnakBar = SnackBar(content: Text('${e.message}'));
-      ScaffoldMessenger.of(context).showSnackBar(SnakBar);
+      //final SnakBar = SnackBar(content: Text('${e.message}'));
+      //ScaffoldMessenger.of(context).showSnackBar(SnakBar);
       failed = true;
     }
   }
@@ -33,8 +33,6 @@ class _PhoneVerificationState extends State<PhoneVerification> {
     await FirebaseAuth.instance.verifyPhoneNumber(
         phoneNumber: '+2' + phoneController.text,
         verificationCompleted: (PhoneAuthCredential credential) async {
-          // print("sms sms code::::::::::::::::::::::::::   " +
-          //   credential.smsCode!);
           FirebaseAuth.instance.signInWithCredential(credential);
         },
         verificationFailed: (FirebaseAuthException e) {
