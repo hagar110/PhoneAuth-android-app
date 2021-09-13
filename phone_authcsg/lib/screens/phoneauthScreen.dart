@@ -15,8 +15,6 @@ class _PhoneVerificationState extends State<PhoneVerification> {
   String verId = "";
   bool failed = false;
   bool isloading = false;
-/* PhoneAuthCredential credential = PhoneAuthProvider.getCredential(verificationId, code);
-    FirebaseAuth.getInstance().signInWithCredential(credential) */
   Future<void> VerifyCode(String pin) async {
     PhoneAuthCredential Credential =
         PhoneAuthProvider.credential(verificationId: verId, smsCode: pin);
@@ -35,6 +33,8 @@ class _PhoneVerificationState extends State<PhoneVerification> {
     await FirebaseAuth.instance.verifyPhoneNumber(
         phoneNumber: '+2' + phoneController.text,
         verificationCompleted: (PhoneAuthCredential credential) async {
+          // print("sms sms code::::::::::::::::::::::::::   " +
+          //   credential.smsCode!);
           FirebaseAuth.instance.signInWithCredential(credential);
         },
         verificationFailed: (FirebaseAuthException e) {
@@ -51,7 +51,7 @@ class _PhoneVerificationState extends State<PhoneVerification> {
             verId = verificationId;
           });
         },
-        timeout: const Duration(seconds: 30));
+        timeout: const Duration(seconds: 0));
   }
 
   final _formKey = GlobalKey<FormState>();
@@ -107,16 +107,16 @@ class _PhoneVerificationState extends State<PhoneVerification> {
                                 labelText: 'phone',
                               ),
                               onSaved: (String? value) {
-                                print('phone:::::::::::::: ' +
-                                    phoneController.text);
+                                // print('phone:::::::::::::: ' +
+                                //   phoneController.text);
                                 verifyPhone();
                                 setState(() {
                                   isloading = true;
                                 });
                               },
                               validator: (String? value) {
-                                print("on validator " + value!);
-                                if (value.length != 11)
+                                //print("on validator " + value!);
+                                if (value!.length != 11)
                                   return 'invalid phone number';
 
                                 return null;
@@ -140,11 +140,9 @@ class _PhoneVerificationState extends State<PhoneVerification> {
                   )
                 : Stack(
                     children: [
-                      // Image.asset(""),
                       Image(
                           image: NetworkImage(
                               "https://images.unsplash.com/photo-1552207802-77bcb0d13122?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1534&q=80")),
-
                       Container(
                         color: Colors.blue.withOpacity(0.9),
                         padding: EdgeInsets.only(top: 60, right: 30, left: 30),
@@ -152,7 +150,6 @@ class _PhoneVerificationState extends State<PhoneVerification> {
                           key: _formKey,
                           child: Center(
                             child: Column(
-                              // mainAxisAlignment: MainAxisAlignment.start,
                               children: [
                                 Icon(
                                   Icons.verified_user,
@@ -202,8 +199,8 @@ class _PhoneVerificationState extends State<PhoneVerification> {
                                     }
                                   },
                                   validator: (String? value) {
-                                    print("on validator " + value!);
-                                    if (value.length < 6)
+                                    //   print("on validator " + value!);
+                                    if (value!.length != 6)
                                       return 'verification code must be 6 numbers';
 
                                     return null;
@@ -220,10 +217,6 @@ class _PhoneVerificationState extends State<PhoneVerification> {
                         ),
                       ),
                     ],
-                  )
-        // }
-        // return CircularProgressIndicator();
-        //})
-        );
+                  ));
   }
 }

@@ -1,8 +1,5 @@
-import 'package:dio/dio.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:phone_authcsg/screens/phoneInput.dart';
 import 'package:phone_authcsg/screens/phoneauthScreen.dart';
 
 void main() async {
